@@ -1,0 +1,16 @@
+{
+    "Application settings saved.": "Pengaturan aplikasi disimpan.",
+    "Settings changed in another session. Reload before saving.": "Pengaturan berubah di sesi lain. Muat ulang sebelum menyimpan.",
+    "Use an existing public image path, such as /jiro-icon.svg.": "Gunakan path gambar publik yang tersedia, misalnya /jiro-icon.svg.",
+    "All notifications marked as read.": "Semua notifikasi ditandai dibaca.",
+    "Notification deleted.": "Notifikasi dihapus.",
+    "This account is inactive.": "Akun ini dinonaktifkan.",
+    "You cannot lock yourself out. Use Profile to change your email.": "Anda tidak dapat mengunci akun sendiri. Gunakan Profil untuk mengubah email.",
+    "At least one active verified administrator must remain.": "Harus ada minimal satu administrator aktif yang terverifikasi.",
+    "User created. Send a password link so they can set their password.": "Pengguna dibuat. Kirim tautan password agar mereka dapat mengatur password sendiri.",
+    "User updated.": "Pengguna diperbarui.",
+    "Project created.": "Proyek berhasil dibuat.",
+    "Project updated.": "Proyek berhasil diperbarui.",
+    "Project deleted.": "Proyek berhasil dihapus.",
+    "The page expired. Please try again.": "Halaman kedaluwarsa. Silakan coba lagi."
+}
