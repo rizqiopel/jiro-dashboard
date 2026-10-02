@@ -1,8 +1,8 @@
 # Jiro Dashboard
 
-Reusable Laravel + Inertia.js + React dashboard foundation, independently developed using Zenith documentation as a reference. We do not have or reproduce Zenith source code.
+Reusable Laravel + Inertia.js + React dashboard starter, built as an original and extensible application foundation.
 
-**Current status:** Local starter and approved System expansion implemented: authentication/access controls, responsive shell/customizer, Project CRUD, Users, Activity Log, Notifications, application Settings, Help and internal Documentation. Fresh source-only setup, role/session browser workflows, and no-dev cached runtime verified. Hosting deployment and maintained E2E/Vitest automation remain deferred; see the handoff.
+**Included:** Authentication and access controls, responsive shell and theme customizer, Project CRUD, user management, activity log, notifications, application settings, Help, and Documentation. Clean setup and production-like cached runtime checks have passed locally. Hosting deployment and maintained E2E/Vitest automation are not included or claimed.
 
 ## Fresh copy
 

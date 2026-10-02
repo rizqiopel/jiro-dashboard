@@ -1,6 +1,6 @@
 # Jiro Dashboard — Project overview
 
-Original reusable dashboard foundation, inspired by 11 Zenith reference documents, not Zenith application source. Installed baseline: Laravel 13, PHP 8.3, Inertia 3, React 19, TypeScript, Tailwind 4, Fortify, Spatie Permission 8. See `DECISIONS.md` for exact provenance and `HANDOFF.md` for current verification.
+Original reusable dashboard foundation. Installed baseline: Laravel 13, PHP 8.3, Inertia 3, React 19, TypeScript, Tailwind 4, Fortify, and Spatie Permission. Setup and verification guidance is included in this repository.
 
 ## Implemented scope
 
