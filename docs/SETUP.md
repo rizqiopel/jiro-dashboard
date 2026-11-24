@@ -103,6 +103,7 @@ Use the implemented Project module as the reference: model/migration/factory →
 Add new named permissions to `config/jiro.php`, seed deliberately (baseline-role grants are synchronized), and enforce them in the new policy before exposing UI actions. Keep sortable columns/page sizes allowlisted; never use arbitrary request values as SQL column/order expressions. The Project example is intentionally shared-workspace, not a tenancy/ownership implementation. Do not install extra generators/table libraries for a simple module.
 
 - Missing Vite manifest: run `npm run build` or start `npm run dev`.
+- Blank page after stopping `npm run dev` abruptly: `public/hot` was left behind and points at a dead dev server. Delete `public/hot` (it is gitignored) or restart the dev server; a normal Ctrl+C removes it.
 - Missing generated TypeScript routes: `php artisan wayfinder:generate --with-form --no-interaction` (also generated during frontend builds).
 - Stale configuration: `php artisan config:clear`.
 - PHPStan aborts with "reached configured PHP memory limit: 128M": `composer types:check` already passes `--memory-limit=512M`; raise it there if a future codebase needs more. Do not lower it without checking a clean run.
