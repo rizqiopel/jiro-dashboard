@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Verified environment at release time: Windows/PowerShell, PHP 8.3.30, Composer 2.9.4, Node 24.14.1, npm 11.14.1. PHP must have the extensions required by `composer check-platform-reqs`, including PDO SQLite for the local baseline.
+Verified environment at release time: Windows/PowerShell, PHP 8.3.30, Composer 2.9.4, Node 24.14.1, npm 11.14.1. Re-verified on 2026-11-25 with PHP 8.5.13 (NTS, via WinGet) and Composer 2.11.3; the platform requirement stays `php ^8.3`. PHP must have the extensions required by `composer check-platform-reqs`, including PDO SQLite for the local baseline.
 
 If `php` is not on your `PATH`, the application cannot start and frontend builds fail at Wayfinder generation. Either add the PHP directory to `PATH`, or call the interpreter by absolute path, for example:
 
@@ -92,7 +92,7 @@ Users-module upgrade: run `php artisan migrate --no-interaction`, deliberately r
 
 SSR is off by default (`INERTIA_SSR_ENABLED=false`); normal startup needs no SSR service. An empty logo env override uses the fallback mark. HTML CSRF errors redirect back with localized expiry feedback; JSON retains 419. Route-binding 404 errors resolve the selected locale.
 
-See `DESIGN_SYSTEM.md`, `ADDING_MODULES.md`, and `DEPLOYMENT.md` for customization/removal/deployment. Latest source-only verification includes every System migration, setup rerun preserving env/key, no automatic accounts/demo data, full checks and cached no-dev runtime/browser Settings write. Windows/SQLite only; Linux/GitHub CI and non-SQLite databases remain unverified. Temporary QA copies/accounts are not template defaults.
+See `DESIGN_SYSTEM.md`, `ADDING_MODULES.md`, and `DEPLOYMENT.md` for customization/removal/deployment. Latest source-only verification includes every System migration, setup rerun preserving env/key, no automatic accounts/demo data, full checks and cached no-dev runtime/browser Settings write. GitHub Actions runs the suite on Ubuntu; non-SQLite databases remain unverified. Temporary QA copies/accounts are not template defaults.
 
 Existing installations upgrading to Phase 4 must run `php artisan migrate --no-interaction` and `npm run build`. The migration adds the Project table without resetting existing users/roles. Open `/projects` from the sidebar after signing in. There is no automatic demo-data seeder.
 
@@ -105,5 +105,6 @@ Add new named permissions to `config/jiro.php`, seed deliberately (baseline-role
 - Missing Vite manifest: run `npm run build` or start `npm run dev`.
 - Missing generated TypeScript routes: `php artisan wayfinder:generate --with-form --no-interaction` (also generated during frontend builds).
 - Stale configuration: `php artisan config:clear`.
+- PHPStan aborts with "reached configured PHP memory limit: 128M": `composer types:check` already passes `--memory-limit=512M`; raise it there if a future codebase needs more. Do not lower it without checking a clean run.
 - Missing SQLite database: create the file as above, then run migrations. Do not reset existing databases.
 - Commit/preserve `composer.lock` and `package-lock.json` for reproducibility when Git is set up. `.env`, local databases, dependencies, and generated build files must not be committed.
