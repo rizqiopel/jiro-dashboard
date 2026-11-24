@@ -55,6 +55,10 @@ function apply(): void {
 }
 
 export function initializeCustomTheme(): void {
+    if (typeof window === 'undefined') {
+        return;
+    }
+
     if (window.jiroDefaults) {
         const { accent, sidebar, radius } = window.jiroDefaults;
         defaults = { accent, sidebar, radius };
