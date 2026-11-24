@@ -2,7 +2,16 @@
 
 ## Prerequisites
 
-Verified environment: Windows/PowerShell, PHP 8.3.30, Composer 2.9.4, Node 24.14.1, npm 11.14.1. PHP must have the extensions required by `composer check-platform-reqs`, including PDO SQLite for the local baseline.
+Verified environment at release time: Windows/PowerShell, PHP 8.3.30, Composer 2.9.4, Node 24.14.1, npm 11.14.1. PHP must have the extensions required by `composer check-platform-reqs`, including PDO SQLite for the local baseline.
+
+If `php` is not on your `PATH`, the application cannot start and frontend builds fail at Wayfinder generation. Either add the PHP directory to `PATH`, or call the interpreter by absolute path, for example:
+
+```powershell
+$php = 'C:\path\to\php-8.3\php.exe'
+& $php artisan serve --host=127.0.0.1 --port=8000
+```
+
+A common Windows pitfall: XAMPP ships PHP 8.2, which does **not** satisfy this project's `^8.3` platform requirement. Check `php -v` before troubleshooting anything else. Node-based scripts that spawn `php` (Vite Plus build, Wayfinder) need the same directory on `PATH`, not just a working shell alias.
 
 ## Fresh installation
 

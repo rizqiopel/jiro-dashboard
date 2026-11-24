@@ -5,7 +5,7 @@ Hosting target is not selected and no real production deployment has been perfor
 ## Build and runtime
 
 - PHP 8.3+ with Composer platform requirements and the chosen PDO driver. Verify `composer check-platform-reqs --no-dev` on the target. PHP extensions/web-server configuration must match the production host.
-- Node/npm are needed in the build environment. The verified local toolchain is Node 24.14.1/npm 11.14.1; existing CI specifies Node 22 and has not been run on GitHub here.
+- Node/npm are needed in the build environment. The verified local toolchain is Node 24.14.1/npm 11.14.1, and the CI workflow now pins Node 24 as well. The workflow has not been executed on GitHub from this workspace.
 - Preserve `composer.lock`/`package-lock.json`; never resolve newer dependencies during an ordinary release.
 - Web document root must be `public/`, not the project root. Protect `.env`, database, logs, source, and backups. Configure HTTPS and trusted proxies for the actual host.
 - Give only the runtime user needed write access to `storage/` and `bootstrap/cache/`. SQLite, if selected, requires a persistent writable database location and backup/concurrency planning. Other database engines are not yet verified.
